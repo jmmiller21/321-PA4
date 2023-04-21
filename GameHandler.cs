@@ -76,6 +76,7 @@ namespace PA4
        Players[0].RandomizeScaling();
        Players[1].RandomizeScaling();
      string SelectedFirst = Players[randomindex].name;
+     Console.WriteLine(SelectedFirst + " Will Attack First");
      int SelectedFirstID = Players[randomindex].id;
      for(int i = 0; i<2; i++){
         if(Players[i].id != SelectedFirstID || Players[i].name != SelectedFirst){
@@ -83,39 +84,47 @@ namespace PA4
         }
     }
     bool GameEnded = false ;
-     Console.WriteLine( SelectedFirst + " Will go first");
+    double damageDone = 0;
+ while (Players[randomindex].health > 0 & Players[index].health > 0){
  while  (GameEnded == false){
-  //  for(int i =0; i<2; i++){
-  //        Players[i].RandomizeScaling();
-  //      }
+  GetResult(Players,ref GameEnded);
+   for(int i =0; i<2; i++){
+         Players[i].RandomizeScaling();
+       }
          Console.WriteLine(Players[randomindex].name); 
         Players[randomindex].PrimaryAbility.PrimaryAbility();
         Console.Write(" " + Players[index].name + " with total damage at" +  Players[randomindex].attackStrength);
-      
-    //  Console.WriteLine(Players[rand.Next(2)].ToString());
-    double damageDone = 0;
+
     Console.WriteLine (Players[index].name +  " has blocked " + Players[index].defensivePower + " damage");
-  GetFightDamage(Players, ref damageDone , randomindex , index);
-    Players[index].health =  Players[index].health - Math.Abs(damageDone);
+ GetFightDamage(Players, ref damageDone , randomindex , index);
+   double HealthLost = Players[index].health - Math.Abs(damageDone);
+
+    Players[index].health -=  Math.Abs(HealthLost);
      Console.WriteLine(Players[index].name + " has lost " + Math.Abs(damageDone));
-     GetResult(Players, ref GameEnded);
-     Players[index].ToString();
-    
+     Console.WriteLine(Players[index].ToString());
+      GetResult(Players,ref GameEnded);
+      //  damageDone = 0;
+       HealthLost = 0;
         Console.WriteLine(Players[index].name); 
         Players[index].PrimaryAbility.PrimaryAbility();
         Console.Write(" " + Players[randomindex].name + " with total damage at" +  Players[randomindex].attackStrength);
-      GetFightDamage(Players, ref damageDone , index, randomindex);
+  GetFightDamage(Players, ref damageDone , index, randomindex);
     Console.WriteLine (Players[randomindex].name +  " has blocked " + Players[randomindex].defensivePower + " damage");
-    Players[randomindex].health =  Players[randomindex].health - Math.Abs(damageDone);
-     Console.WriteLine(Players[randomindex].name + " has lost " + Math.Abs(damageDone));
-         damageDone = 0;
+
+      HealthLost = Players[randomindex].health - Math.Abs(damageDone);
+      Players[randomindex].health -= HealthLost;
+     Console.WriteLine(Players[randomindex].name + " has lost " + (damageDone));
+        //  damageDone = 0;
+         HealthLost= 0;
       Console.WriteLine(Players[randomindex].ToString());
   
   Console.WriteLine(Players[index].ToString());
          GetResult(Players, ref GameEnded);
        ChangeAttack(Players);
-     
+   
  }
+ }
+
      }
     //  GetResult(Players);
     
@@ -123,7 +132,7 @@ namespace PA4
          for(int i = 0; i<1; i++){
           for (int j = i+1; j<2; j++){
              if (Players[i].health < 0.0 && Players[j].health> 0.0){
-          Console.WriteLine(Players[i].name + " Wins");
+          Console.WriteLine(Players[j].name + " Wins");
           return GameEnded = true;
              }
           if (Players[j].health < 0.0 && Players[i].health> 0.0){
@@ -131,7 +140,7 @@ namespace PA4
           return GameEnded = true;
              }
           if (Players[j].health > 0 && Players[i].health>0){
-            return GameEnded = false;
+            return GameEnded == false;
           }
                     }
            
@@ -141,7 +150,7 @@ namespace PA4
      
     
     public double GetFightDamage(Character[] Players, ref double damageDone, int i, int j){
-        if(Players[0].name == "Jack Sparrow" & Players[1].name == "Will Turner"){
+        if(Players[0].name == "Jack Sparrow" && Players[1].name == "Will Turner"){
          damageDone = (Players[0].attackStrength - Players[1].defensivePower) * 1.2;
            return damageDone;
         }
@@ -153,7 +162,7 @@ namespace PA4
          damageDone = (Players[0].attackStrength - Players[1].defensivePower)*1.2;
          return damageDone;
         }
-            if(Players[1].name == "Jack Sparrow" & Players[0].name == "Will Turner"){
+            if(Players[1].name == "Jack Sparrow" && Players[0].name == "Will Turner"){
           damageDone =(Players[1].attackStrength - Players[0].defensivePower) * 1.2;
            return damageDone;
         }
@@ -162,18 +171,18 @@ namespace PA4
            return damageDone;
         }
         if (Players[1].name == "Davy Jones" && Players[0].name == "Jack Sparrow") {
-       damageDone =(Players[1].attackStrength - Players[0].defensivePower) * 1.2;
+       damageDone = (Players[1].attackStrength - Players[0].defensivePower) * 1.2;
            return damageDone;
         }
         else {
-      damageDone =(Players[i].attackStrength - Players[j].defensivePower);
+      damageDone = (Players[i].attackStrength - Players[j].defensivePower);
    return damageDone;
         }
     }
   public void ChangeAttack(Character[] Players){
     Random rand = new Random();
-    int index = rand.Next(0,2);
-    Players[index].PrimaryAbility = new Pistol();
+    // int index = rand.Next(0,2);
+    // Players[index].PrimaryAbility = new Pistol();
   }
 
     }
