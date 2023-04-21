@@ -87,7 +87,7 @@ namespace PA4
     double damageDone = 0;
  while (Players[randomindex].health > 0 & Players[index].health > 0){
  while  (GameEnded == false){
-  GetResult(Players,ref GameEnded);
+  // GetResult(Players,ref GameEnded);
    for(int i =0; i<2; i++){
          Players[i].RandomizeScaling();
        }
@@ -102,7 +102,7 @@ namespace PA4
     Players[index].health -=  Math.Abs(HealthLost);
      Console.WriteLine(Players[index].name + " has lost " + Math.Abs(damageDone));
      Console.WriteLine(Players[index].ToString());
-      GetResult(Players,ref GameEnded);
+      // GetResult(Players,ref GameEnded);
       //  damageDone = 0;
        HealthLost = 0;
         Console.WriteLine(Players[index].name); 
@@ -115,10 +115,9 @@ namespace PA4
       Players[randomindex].health -= HealthLost;
      Console.WriteLine(Players[randomindex].name + " has lost " + (damageDone));
         //  damageDone = 0;
-         HealthLost= 0;
+        //  HealthLost= 0;
       Console.WriteLine(Players[randomindex].ToString());
-  
-  Console.WriteLine(Players[index].ToString());
+      Console.WriteLine(Players[index].ToString());
          GetResult(Players, ref GameEnded);
        ChangeAttack(Players);
    
@@ -181,8 +180,8 @@ namespace PA4
     }
   public void ChangeAttack(Character[] Players){
     Random rand = new Random();
-    // int index = rand.Next(0,2);
-    // Players[index].PrimaryAbility = new Pistol();
+    int index = rand.Next(0,2);
+    Players[index].PrimaryAbility = new Pistol();
   }
 
     }
