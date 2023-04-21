@@ -1,0 +1,15 @@
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/bin/Debug/net6.0/321-PA4
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/bin/Debug/net6.0/321-PA4.deps.json
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/bin/Debug/net6.0/321-PA4.runtimeconfig.json
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/bin/Debug/net6.0/321-PA4.dll
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/bin/Debug/net6.0/321-PA4.pdb
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.csproj.AssemblyReference.cache
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.AssemblyInfoInputs.cache
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.AssemblyInfo.cs
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.csproj.CoreCompileInputs.cache
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.dll
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/refint/321-PA4.dll
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.pdb
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/321-PA4.genruntimeconfig.cache
+/Users/justinmiller/Documents/source/mis321/repos/321-PA4/obj/Debug/net6.0/ref/321-PA4.dll
